@@ -4,10 +4,13 @@ import { ChangeEvent } from 'react'
 import TodoGrid from './TodoGrid'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../store'
+import classNames from 'classnames'
 
 const ListTodo = () => {
   const { todos, toggleImportant, update } = useTodo()
   const display = useSelector((state: RootState) => state.todo.display)
+
+  console.log({ todos })
 
   const handleChangeSelectedTodo = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target
@@ -41,7 +44,12 @@ const ListTodo = () => {
               handleImportant={handleImportant}
             />
           ))}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 my-4">
+      <div
+        className={classNames(
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2',
+          { 'my-4': display === 'grid' },
+        )}
+      >
         {display === 'grid' &&
           todos
             .filter((t) => t.status === 'todo')

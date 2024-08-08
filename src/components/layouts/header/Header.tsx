@@ -14,11 +14,21 @@ import AppRowIcon from '../../svg/RowDisplayIcon'
 
 const Header: FC<{ setDrawer: SetState<boolean> }> = ({ setDrawer }) => {
   const htmlClassSelector = document.querySelector('html')?.classList
+  const bodyClassSelector = document.querySelector('body')?.classList
   const isDarkMode = useSelector((state: RootState) => state.todo.theme)
   const display = useSelector((state: RootState) => state.todo.display)
+  const bodyClass = 'bg-raisinBlack-200-1'
   const mode = 'dark'
-  const htmlClassHandler = () =>
-    isDarkMode ? htmlClassSelector?.remove(mode) : htmlClassSelector?.add(mode)
+
+  const htmlClassHandler = () => {
+    if (isDarkMode) {
+      htmlClassSelector?.remove(mode)
+      bodyClassSelector?.remove(bodyClass)
+    } else {
+      htmlClassSelector?.add(mode)
+      bodyClassSelector?.add(bodyClass)
+    }
+  }
 
   const dispatch = useDispatch()
 

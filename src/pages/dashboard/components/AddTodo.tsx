@@ -55,7 +55,7 @@ const AddTodo: FC<{ expandTodoInput: boolean }> = ({ expandTodoInput }) => {
       steps: [],
       repeat: todoDetails.repeat,
       dueDate: (todoDetails.dueDate as Date) ?? new Date(),
-      important: true,
+      important: false,
       status: TodoStatus.TODO,
     }
 
@@ -95,16 +95,14 @@ const AddTodo: FC<{ expandTodoInput: boolean }> = ({ expandTodoInput }) => {
               <BellIcon fill={iconColor} />
             </button>
             <button onClick={toggleRepeat}>
-              <RepeatIcon
-                fill={todoDetails.repeat ? 'green' : iconColor}
-              />
+              <RepeatIcon fill={todoDetails.repeat ? 'green' : iconColor} />
             </button>
             <button>
               <CalendarIcon fill={iconColor} />
             </button>
           </div>
           <button
-            className="uppercase bg-japaneseLaurel-100-o29 dark:bg-japaneseLaurel-100-oe0 text-japaneseLaurel-100-1 dark:text-americanSilver-100-1 font-outfit-medium text-[15px] leading-5 px-4 py-2 rounded-lg font-medium disabled:text-gray-400"
+            className="uppercase bg-japaneseLaurel-100-o29 dark:bg-japaneseLaurel-100-oe0 text-japaneseLaurel-100-1 dark:text-americanSilver-100-1 font-outfit-medium text-[15px] leading-5 px-4 py-2 rounded-lg font-medium disabled:text-gray-400 dark:disabled:text-gray-400"
             onClick={handleAddTodo}
             disabled={!todoDetails.title.trim()}
           >

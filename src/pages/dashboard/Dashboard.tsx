@@ -56,7 +56,7 @@ const Dashboard = () => {
             className={classNames(
               'transition-all duration-300',
               selectedTodo
-                ? 'xl:w-[calc(100%-360px)] lg:w-[calc(100%-260px)] md:w-full'
+                ? 'xl:w-[calc(100%-360px)] lg:w-[calc(100%-260px)] w-full'
                 : 'w-full',
             )}
           >
