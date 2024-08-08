@@ -1,0 +1,7 @@
+.p-datepicker-group-container{
+    @apply bg-white-100-1 p-2
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

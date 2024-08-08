@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "outfit-regular";
+  src: url("./../assets/fonts/Outfit/static/Outfit-Regular.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "outfit-medium";
+  src: url("./../assets/fonts/Outfit/static/Outfit-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inter-regular";
+  src: url("./../assets/fonts/Inter/static/Inter_18pt-Regular.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inter-medium";
+  src: url("./../assets/fonts/Inter/static/Inter_18pt-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
